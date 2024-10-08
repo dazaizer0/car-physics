@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class HookesLaw : MonoBehaviour
+public class SuspensionW : MonoBehaviour
 {
     [Header("Properties")]
-    public float springConstant = 50.0f;
-    public float damping = 5.0f;
+    public float springConstant = 100.0f;
+    public float damping = 10.0f;
     public float distance = 0.0f;
     public float rayLength = 10.0f;
     public LayerMask groundLayer;
     public Transform parent;
     public int numberOfWheels = 4;
+    public float yRotationAxis = 0.0f;
 
     [Header("Offset")]
     public Vector3 wheelOffset;
@@ -19,12 +20,17 @@ public class HookesLaw : MonoBehaviour
     private Rigidbody rb;
     private Rigidbody parentRb;
     private Vector3 startLocalPosition;
+    private Quaternion initialRotation;
+    private bool grounded;
+
+    public float minHeightAboveGround = 0.1f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         parentRb = parent.GetComponent<Rigidbody>();
         startLocalPosition = this.transform.localPosition;
+        initialRotation = transform.rotation;
     }
 
     void Update()
@@ -35,13 +41,18 @@ public class HookesLaw : MonoBehaviour
         {
             groundHeight = transform.position.y - distanceToGround + distance;
         }
+
+        PreventWheelSinking();
     }
 
     void FixedUpdate()
-    {
+    {   
+        Quaternion updatedRotation = Quaternion.Euler(parent.rotation.eulerAngles.z, parent.rotation.eulerAngles.y + yRotationAxis, parent.rotation.eulerAngles.x);
+        transform.rotation = updatedRotation;
+
         Vector3 restPosition = parent.TransformPoint(startLocalPosition + wheelOffset);
         Vector3 displacement = transform.position - new Vector3(restPosition.x, restPosition.y - distance, restPosition.z);
-        
+
         Vector3 springForce = (-springConstant * displacement) / numberOfWheels; 
         Vector3 dampingForce = (-damping * rb.velocity) / numberOfWheels;
 
@@ -68,6 +79,16 @@ public class HookesLaw : MonoBehaviour
         {
             distanceToGround = -1;
             Debug.Log("No ground detected.");
+        }
+    }
+
+    void PreventWheelSinking()
+    {
+        if (distanceToGround > 0 && distanceToGround < minHeightAboveGround)
+        {
+            Vector3 correctedPosition = transform.position;
+            correctedPosition.y = groundHeight + minHeightAboveGround;
+            transform.position = correctedPosition;
         }
     }
 }

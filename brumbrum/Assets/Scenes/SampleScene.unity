@@ -221,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 214852582}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.221, y: 1.37, z: -0.68}
+  m_LocalPosition: {x: 2.029, y: 1.37, z: -4.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -431,9 +431,11 @@ MonoBehaviour:
     m_Bits: 64
   parent: {fileID: 2074426096}
   numberOfWheels: 2
+  yRotationAxis: 0
   wheelOffset: {x: 0, y: 0, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!43 &686848131
 Mesh:
   m_ObjectHideFlags: 0
@@ -987,9 +989,11 @@ MonoBehaviour:
     m_Bits: 64
   parent: {fileID: 2074426096}
   numberOfWheels: 2
+  yRotationAxis: 0
   wheelOffset: {x: 0, y: 0, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!4 &1072718323
 Transform:
   m_ObjectHideFlags: 0
@@ -1578,8 +1582,8 @@ Transform:
   m_GameObject: {fileID: 2074426091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.11, y: 4.54, z: -1.93}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.3599997, y: 4.04, z: -1.93}
+  m_LocalScale: {x: 10, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1072718323}
@@ -2216,7 +2220,7 @@ Transform:
   m_GameObject: {fileID: 2753385813645375687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.57547283, y: 0.61480033, z: 1.8449165}
+  m_LocalPosition: {x: 0.65, y: 0.61480033, z: 1.8449165}
   m_LocalScale: {x: 16.782785, y: 16.782785, z: 16.782785}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2235,17 +2239,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springConstant: 360
-  damping: 8
-  distance: 0.2
+  damping: 40
+  distance: 0.64
   rayLength: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
+  yRotationAxis: -90
   wheelOffset: {x: 0, y: -0.12, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &4889381646629628533
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2293,7 +2299,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &5028869729673473287
 GameObject:
@@ -2363,7 +2369,7 @@ Transform:
   m_GameObject: {fileID: 5028869729673473287}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.57547265, y: 0.61480063, z: 1.8449165}
+  m_LocalPosition: {x: -0.65, y: 0.61480063, z: 1.8449165}
   m_LocalScale: {x: 16.782785, y: 16.782785, z: 16.782785}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2382,17 +2388,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springConstant: 360
-  damping: 8
-  distance: 0.2
+  damping: 40
+  distance: 0.64
   rayLength: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
+  yRotationAxis: -90
   wheelOffset: {x: 0, y: -0.12, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &5357169584988297691
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2440,7 +2448,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &5736256275360549952
 GameObject:
@@ -2511,9 +2519,11 @@ MonoBehaviour:
     m_Bits: 64
   parent: {fileID: 7682873854295968957}
   numberOfWheels: 4
+  yRotationAxis: 0
   wheelOffset: {x: 0, y: 0, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &5736256275360549955
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2665,9 +2675,11 @@ MonoBehaviour:
     m_Bits: 64
   parent: {fileID: 7682873854295968957}
   numberOfWheels: 4
+  yRotationAxis: 0
   wheelOffset: {x: 0, y: 0, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &6057963983896492874
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2798,9 +2810,11 @@ MonoBehaviour:
     m_Bits: 64
   parent: {fileID: 7682873854295968957}
   numberOfWheels: 4
+  yRotationAxis: 0
   wheelOffset: {x: 0, y: 0, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &6894061002464486745
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2833,6 +2847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7665433577760170449}
   - component: {fileID: 7665433577760170450}
+  - component: {fileID: 7665433577760170451}
   m_Layer: 0
   m_Name: GClass
   m_TagString: Untagged
@@ -2947,9 +2962,11 @@ MonoBehaviour:
     m_Bits: 64
   parent: {fileID: 7682873854295968957}
   numberOfWheels: 4
+  yRotationAxis: 0
   wheelOffset: {x: 0, y: 0, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &7113843738899693810
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3022,7 +3039,7 @@ Transform:
   m_GameObject: {fileID: 7001628014824881003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.98, y: 3.6, z: 14.46}
+  m_LocalPosition: {x: 13.98, y: 7.75, z: 14.46}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3046,7 +3063,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7001628014824881003}
   serializedVersion: 4
-  m_Mass: 12
+  m_Mass: 36
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3065,6 +3082,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7665433577760170451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001628014824881003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d471a4a9b01c534f923f37d20a263f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suspensionWs: []
+  springConstant: 360
+  damping: 24
+  distance: 0.64
+  rayLength: 10
+  numberOfWheels: 4
+  groundHeight: 0
+  minHeightAboveGround: 0.1
 --- !u!4 &7682873854295968957
 Transform:
   m_ObjectHideFlags: 0
@@ -3185,7 +3222,7 @@ Transform:
   m_GameObject: {fileID: 2031038425538088048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.57547283, y: 0.61480033, z: -0.07482171}
+  m_LocalPosition: {x: 0.7, y: 0.61480033, z: -0.07482171}
   m_LocalScale: {x: 16.782785, y: 16.782785, z: 16.782785}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3204,17 +3241,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springConstant: 360
-  damping: 8
-  distance: 0.2
+  damping: 40
+  distance: 0.64
   rayLength: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
+  yRotationAxis: -90
   wheelOffset: {x: 0, y: -0.12, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &8519436593542518329
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3262,7 +3301,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!4 &8839854976395051207
 Transform:
@@ -3273,7 +3312,7 @@ Transform:
   m_GameObject: {fileID: 4179616711830287576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.57547265, y: 0.61480063, z: -0.07482171}
+  m_LocalPosition: {x: -0.7, y: 0.61480063, z: -0.07482171}
   m_LocalScale: {x: 16.782785, y: 16.782785, z: 16.782785}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3292,17 +3331,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springConstant: 360
-  damping: 8
-  distance: 0.2
+  damping: 40
+  distance: 0.64
   rayLength: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
+  yRotationAxis: -90
   wheelOffset: {x: 0, y: -0.12, z: 0}
   groundHeight: 0
   distanceToGround: 0
+  minHeightAboveGround: 0.1
 --- !u!64 &8839854976395051209
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3350,7 +3391,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!4 &9204288830236350194
 Transform:
