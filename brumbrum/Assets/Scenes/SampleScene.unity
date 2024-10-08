@@ -1009,6 +1009,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2074426096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1368364143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368364144}
+  m_Layer: 0
+  m_Name: massCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1368364144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368364143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.026, y: 1.502, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7665433577760170449}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625699492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,13 +1404,13 @@ GameObject:
   - component: {fileID: 1841571040}
   - component: {fileID: 1841571039}
   - component: {fileID: 1841571038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &1841571038
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -2238,9 +2269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8fe97deffd2094b9fec115360df815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springConstant: 360
-  damping: 40
-  distance: 0.64
+  springConstant: 550
+  damping: 110
+  distance: 0.5
   rayLength: 10
   groundLayer:
     serializedVersion: 2
@@ -2248,7 +2279,7 @@ MonoBehaviour:
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
   yRotationAxis: -90
-  wheelOffset: {x: 0, y: -0.12, z: 0}
+  wheelOffset: {x: -0.04, y: -0.1, z: 0}
   groundHeight: 0
   distanceToGround: 0
   minHeightAboveGround: 0.1
@@ -2387,9 +2418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8fe97deffd2094b9fec115360df815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springConstant: 360
-  damping: 40
-  distance: 0.64
+  springConstant: 550
+  damping: 110
+  distance: 0.5
   rayLength: 10
   groundLayer:
     serializedVersion: 2
@@ -2397,7 +2428,7 @@ MonoBehaviour:
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
   yRotationAxis: -90
-  wheelOffset: {x: 0, y: -0.12, z: 0}
+  wheelOffset: {x: 0.04, y: -0.1, z: 0}
   groundHeight: 0
   distanceToGround: 0
   minHeightAboveGround: 0.1
@@ -3038,7 +3069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7001628014824881003}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.70983857, z: -0, w: 0.7043645}
   m_LocalPosition: {x: 13.98, y: 7.75, z: 14.46}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
@@ -3053,8 +3084,9 @@ Transform:
   - {fileID: 5265915363127970494}
   - {fileID: 5963462087898098033}
   - {fileID: 2991686406858777102}
+  - {fileID: 1368364144}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.444, z: 0}
 --- !u!54 &7665433577760170450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3063,7 +3095,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7001628014824881003}
   serializedVersion: 4
-  m_Mass: 36
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3094,14 +3126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d471a4a9b01c534f923f37d20a263f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suspensionWs: []
-  springConstant: 360
-  damping: 24
-  distance: 0.64
-  rayLength: 10
-  numberOfWheels: 4
-  groundHeight: 0
-  minHeightAboveGround: 0.1
+  suspensionWs:
+  - {fileID: 8519436593542518328}
+  - {fileID: 8839854976395051208}
 --- !u!4 &7682873854295968957
 Transform:
   m_ObjectHideFlags: 0
@@ -3240,9 +3267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8fe97deffd2094b9fec115360df815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springConstant: 360
-  damping: 40
-  distance: 0.64
+  springConstant: 550
+  damping: 110
+  distance: 0.5
   rayLength: 10
   groundLayer:
     serializedVersion: 2
@@ -3250,7 +3277,7 @@ MonoBehaviour:
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
   yRotationAxis: -90
-  wheelOffset: {x: 0, y: -0.12, z: 0}
+  wheelOffset: {x: -0.08, y: -0.1, z: 0}
   groundHeight: 0
   distanceToGround: 0
   minHeightAboveGround: 0.1
@@ -3330,9 +3357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8fe97deffd2094b9fec115360df815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springConstant: 360
-  damping: 40
-  distance: 0.64
+  springConstant: 550
+  damping: 110
+  distance: 0.5
   rayLength: 10
   groundLayer:
     serializedVersion: 2
@@ -3340,7 +3367,7 @@ MonoBehaviour:
   parent: {fileID: 7665433577760170449}
   numberOfWheels: 4
   yRotationAxis: -90
-  wheelOffset: {x: 0, y: -0.12, z: 0}
+  wheelOffset: {x: 0.08, y: -0.1, z: 0}
   groundHeight: 0
   distanceToGround: 0
   minHeightAboveGround: 0.1

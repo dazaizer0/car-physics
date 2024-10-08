@@ -47,7 +47,7 @@ public class SuspensionW : MonoBehaviour
 
     void FixedUpdate()
     {   
-        Quaternion updatedRotation = Quaternion.Euler(parent.rotation.eulerAngles.z, parent.rotation.eulerAngles.y + yRotationAxis, parent.rotation.eulerAngles.x);
+        Quaternion updatedRotation = Quaternion.Euler(parent.rotation.eulerAngles.z, parent.rotation.eulerAngles.y + yRotationAxis, transform.rotation.eulerAngles.z);
         transform.rotation = updatedRotation;
 
         Vector3 restPosition = parent.TransformPoint(startLocalPosition + wheelOffset);
@@ -56,11 +56,15 @@ public class SuspensionW : MonoBehaviour
         Vector3 springForce = (-springConstant * displacement) / numberOfWheels; 
         Vector3 dampingForce = (-damping * rb.velocity) / numberOfWheels;
 
-        rb.AddForce(springForce + dampingForce);
-        parentRb.AddForceAtPosition(-springForce, transform.position);
-
         Vector3 parentDampingForce = (-damping * parentRb.velocity) / numberOfWheels;
-        parentRb.AddForce(parentDampingForce);
+
+        if (distanceToGround < 1.0f && distanceToGround > 0.0f)  {
+            parentRb.AddForce(parentDampingForce);
+            // rb.AddForce(springForce + dampingForce);
+            parentRb.AddForceAtPosition(-springForce, transform.position);
+        }
+
+        rb.AddForce(springForce + dampingForce);
     }
 
     void CalculateDistanceToGround()
